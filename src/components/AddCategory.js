@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-
-export const AddCategory = ({addCategory, handleReset }) => {
+import PropType from 'prop-types'
+ const AddCategory = ({addCategory, handleReset }) => {
 
     const [inputValue, setInputValue] = useState('')
     
@@ -20,7 +20,7 @@ export const AddCategory = ({addCategory, handleReset }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="">
+        <form onSubmit={handleSubmit} className="" aria-label='form'>
             <input
             className="form-control w-100 bg-dark text-light shadow-none inputForm"
             type='text'
@@ -32,4 +32,12 @@ export const AddCategory = ({addCategory, handleReset }) => {
            
         </form>
     )
+}
+
+
+AddCategory.propType = {
+    AddCategory: PropType.func.isRequired,
+}
+module.exports = {
+    AddCategory,
 }

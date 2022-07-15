@@ -1,8 +1,8 @@
 
 import { useFetchGif } from "../hooks/useFetchGif";
-import { GifItem } from "./GifItem";
+import { GifItem }  from "./GifItem";
 
-export const GifGrid = ({ category, handleRemove }) => {
+const GifGrid = ({ category, handleRemove }) => {
   const { imagenes, loading } = useFetchGif(category);
   return (
     <>
@@ -25,3 +25,6 @@ export const GifGrid = ({ category, handleRemove }) => {
     </>
   );
 };
+module.exports = {
+  GifGrid,
+}

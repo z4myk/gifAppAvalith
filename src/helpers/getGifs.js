@@ -1,4 +1,4 @@
-export const getGifs = async(category) => {
+const getGifs = async(category) => {
     const API_KEY = 'J4lgnidS7q6Z2DxgVV7JKIPGOq4Tvcu8'
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${category}&limit=${10}&offset=0&rating=g&lang=en`;
 
@@ -16,3 +16,7 @@ export const getGifs = async(category) => {
         
         return gifs;
     }
+
+module.exports = {
+    getGifs,
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import Swal from "sweetalert2";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-export const GifItem = ({url, title}) => {
+import PropTypes from 'prop-types'
+const GifItem = ({url, title}) => {
 
     const handleModal = () => {
         Swal.fire({
@@ -24,4 +24,20 @@ export const GifItem = ({url, title}) => {
 
         </div>
     )
+}
+
+
+GifItem.PropTypes = {
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+  
+}
+
+GifItem.defaultProps = {
+  title: 'Gif',
+  url: '...'
+}
+
+module.exports = {
+  GifItem,
 }
